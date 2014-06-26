@@ -1,4 +1,59 @@
-RECIPES
-["core", "deployment", "devise", "email", "extras", "frontend", "gems", "git", "init", "learn_rails", "omniauth", "pages", "rails_bootstrap", "rails_devise", "rails_devise_pundit", "rails_foundation", "rails_omniauth", "rails_signup_download", "railsapps", "readme", "roles", "setup", "tests"]
-PREFERENCES
-{:git=>true, :apps4=>"none", :dev_webserver=>"webrick", :prod_webserver=>"thin", :database=>"postgresql", :templates=>"erb", :tests=>"none", :frontend=>"bootstrap3", :email=>"mandrill", :authentication=>"devise", :devise_modules=>"default", :authorization=>"none", :form_builder=>"none", :pages=>"home"}
+Edificapro
+========================
+
+This application was generated with the rails_apps_composer gem:
+https://github.com/RailsApps/rails_apps_composer
+provided by the RailsApps Project:
+http://railsapps.github.io/
+
+________________________
+
+Recipes:
+
+* core
+* deployment
+* devise
+* email
+* extras
+* frontend
+* gems
+* git
+* init
+* learn_rails
+* omniauth
+* pages
+* rails_bootstrap
+* rails_devise
+* rails_devise_pundit
+* rails_foundation
+* rails_omniauth
+* rails_signup_download
+* railsapps
+* readme
+* roles
+* setup
+* tests
+
+Preferences:
+
+* git: true
+* apps4: none
+* dev_webserver: webrick
+* prod_webserver: thin
+* database: postgresql
+* templates: erb
+* tests: none
+* frontend: bootstrap3
+* email: mandrill
+* authentication: devise
+* devise_modules: default
+* authorization: none
+* form_builder: none
+* pages: home
+* rvmrc: true
+* quiet_assets: true
+* better_errors: true
+
+________________________
+
+License
