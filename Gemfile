@@ -11,6 +11,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'bootstrap-sass'
 gem 'devise'
+gem 'devise-i18n', '~> 0.10.3'
 gem 'pg'
 group :development do
   gem 'better_errors'
