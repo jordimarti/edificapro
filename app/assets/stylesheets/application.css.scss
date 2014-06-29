@@ -13,3 +13,206 @@
  *= require_tree .
  *= require_self
  */
+
+
+body {
+	font-family: "museo-sans",sans-serif;
+	background-color: #585857;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+}
+
+.top-header {
+	min-height: 80px;
+	padding-top: 18px;
+	background-color: white;
+}
+
+.menu-button-div {
+	background-color: white;
+}
+
+.footer {
+	padding: 40px 0px 40px 0px;
+	text-align: center;
+	color: white;
+}
+
+.logo-edificapro {
+	width: 212px;
+	height: 47px;
+	margin: 0px;
+}
+
+.sessionbar {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: right;
+
+}
+
+a.sessionbar-link {
+	color: #585857;
+}
+
+a.sessionbar-link:hover {
+	color: #db3e3b;
+	text-decoration: none;
+}
+
+.main-content {
+	background-color: white;
+	padding-bottom: 50px;
+}
+
+.register-container {
+	
+  background-size: cover;
+  background-color: black;
+}
+
+.session-container {
+	
+  background-size: cover;
+  background-color: black;
+}
+
+.form-well {
+	border: 1px solid #CCC;
+	border-radius: 5px;
+	padding: 30px;
+	background-color: #EAEAEA;
+	margin-top: 20px;
+}
+
+.photo-text {
+	color: white;
+}
+
+.photo-text-link {
+	text-decoration: underline;
+	color: white;
+}
+
+.photo-text-link:hover {
+	color: white;
+}
+
+.form-button {
+	background-color: #059e9a;
+	color: white;
+}
+
+.footer-link {
+	color: white;
+}
+
+.footer-link:hover {
+	color: white;
+}
+
+.session-content {
+	min-height: 600px;
+}
+
+.home-first-container-background {
+	background-color: #332a28;
+}
+
+.home-first-container {
+  background-image: url(image-path('foto_micheel.jpg'));
+  background-size: cover;
+  min-height: 300px;
+  max-width: 1300px;
+  padding: 50px 0px 50px 0px;
+  margin: 0 auto;
+}
+
+.home-first-container-mobile {
+	background-color: #EAEAEA;
+}
+
+.tablet-view {
+	text-align: center;
+}
+
+.home-second-container {
+	padding: 50px 0px 50px 0px;
+}
+
+.home-third-container {
+  background-image: url(image-path('interior_casa3.jpg'));
+  background-size: cover;
+  background-color: black;
+  min-height: 400px;
+  padding: 50px 0px 50px 0px;
+}
+
+.home-fourth-container {
+	padding: 50px 0px 50px 0px;
+}
+
+.home-photo-title {
+	color: white;
+	padding-bottom: 20px;
+}
+
+.home-photo-text {
+	color: white;
+	font-size: 18px;
+	line-height: 23px;
+}
+
+p.centered-button {
+	text-align: center;
+	padding-top: 25px;
+	margin-bottom: 0px;
+	padding-bottom: 30px;
+}
+
+a.button-new {
+	background-color: #059E9A;
+	color: white;
+}
+
+a.button-new:hover {
+	color: white;
+}
+
+.home-title {
+	margin-top: 0px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.home-text {
+	font-size: 16px;
+	line-height: 22px;
+	margin-bottom: 22px;
+}
+
+.home-img-devices {
+	margin-top: 120px;
+}
+
+.home-img-house {
+	padding: 20px;
+	width: 300px;
+	height: 287px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+a.buy-button {
+	background-color: #059E9A;
+	color: white;
+	font-size: 1.5em;
+	font-weight: bold;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+a.buy-button:hover {
+	color: white;
+	text-decoration: none;
+}

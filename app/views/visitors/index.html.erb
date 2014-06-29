@@ -1,1 +1,86 @@
-<h3>Welcome</h3>
+<div class="main-content">
+	
+	<div class="home-first-container-mobile">
+		<div class="col-md-7 col-md-offset-5 visible-xs">
+			<h1 class="home-title">Aprende todo lo relacionado con el estándar Passivhaus</h1>
+			<p class="home-text">Micheel Wassouf es Proyectista Passivhaus certificado y tiene una larga experiencia en docencia y difusión del estándar.</p>
+			<p class="home-text">De la mano de Micheel aprenderás las bases del estándar Passivhaus y descubrirás los conceptos avanzados que te convertirán en un/a especialista en Passivhaus.</p>
+			<p class="centered-button"> <%= link_to("Empieza ahora!", {:controller => '/library', :action => 'index'}, :class => 'btn button-new') %> </p>
+		</div>
+	</div>
+
+	<div>
+		<h1>Web en proves</h1>
+	</div>
+
+	<div class="home-first-container-background">
+		<div class="home-first-container">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-7 col-sm-offset-5 visible-md visible-lg">
+						<h1 class="home-photo-title">Aprende todo lo relacionado con el estándar Passivhaus</h1>
+						<p class="home-photo-text">Micheel Wassouf es Proyectista Passivhaus certificado y tiene una larga experiencia en docencia y difusión del estándar.</p>
+						<p class="home-photo-text">De la mano de Micheel aprenderás las bases del estándar Passivhaus y descubrirás los conceptos avanzados que te convertirán en un/a especialista en Passivhaus.</p>
+						<p class="centered-button"> <%= link_to("Empieza ahora!", {:controller => '/library', :action => 'index'}, :class => 'buy-button') %> </p>
+					</div>
+					<div class="col-sm-7 col-sm-offset-5 visible-sm tablet-view">
+						<h1 class="home-photo-title">Aprende todo lo relacionado con el estándar Passivhaus</h1>
+						<p class="home-photo-text">Micheel Wassouf es Proyectista Passivhaus certificado y tiene una larga experiencia en docencia y difusión del estándar. De su mano aprenderás las bases del estándar Passivhaus.</p>
+						<p class="centered-button"> <%= link_to("Empieza ahora!", {:controller => '/library', :action => 'index'}, :class => 'buy-button') %> </p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="home-second-container">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<h1 class="home-title">Presentación del curso de introducción:</h1>
+					<video id="0" class="sublime" width="640" height="360" title="Presentación curso introducción al passivhaus" data-uid="0" preload="none">
+					  <source src="https://s3-eu-west-1.amazonaws.com/edificapro/c01/c01c00_presentacion_hd.mp4" data-quality="hd" />
+					  <source src="https://s3-eu-west-1.amazonaws.com/edificapro/c01/c01c00_presentacion_sd.mp4" />
+					</video>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="home-third-container">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-6">
+					<h1 class="home-photo-title">El futuro de la edificación es construir edificios pasivos</h1>
+					<p class="home-photo-text">El estándar Passivhaus no es un capricho o una moda pasajera, es la respuesta a la necesidad de reducir radicalmente el impacto ambiental de los edificios. Las exigencias de las normativas y de la sociedad son cada vez más altas, por lo que los profesionales de la edificación deben aprender a construir y rehabilitar los edificios para reducir su consumo de energía y mejorar su confort.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="home-fourth-container">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-7">
+					<h1 class="home-title">Una experiencia educativa adaptada a nuestros tiempos</h1>
+					<p class="home-text">A todos nos ha pasado, compramos un curso online y aparecen imprevistos que nos impiden dedicar el tiempo necesario para aprovecharlo. En Passivacademy el curso empieza cuando a ti te va bien y tienes un año entero para realizarlo. Además cuando compras un nuevo curso se activan de nuevo tus cursos previos para que puedas continuar consultándolos.</p>
+					<p class="home-text">Otro de los problemas con la mayoría de cursos online es su baja calidad en cuanto a experiencia de usuario: presentaciones en streaming que se cortan, contenidos que no se pueden visualizar en una tableta, apuntes en power-point que son difíciles de comprender sin la explicación del profesor, etc. Los cursos de Passivacademy son tan flexibles que incluso los puedes seguir desde tu smartphone mientras estás en el autobús. El curso se adapta a tus horarios y circunstancias.</p> 
+				</div>
+				<div class="col-md-5">
+					<%= image_tag('devices.jpg', :alt => 'Contenidos adaptados a todos los dispositivos', :class => 'img-responsive home-img-devices') %>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="hidden-xs">
+						<p class="centered-button"> <%= link_to("Empieza ahora mismo por sólo 59€", {:controller => '/library', :action => 'index'}, :class => 'buy-button') %> </p>
+					</div>
+					<div class="visible-xs">
+						<p class="centered-button"> <%= link_to("Empieza ahora mismo por sólo 59€", {:controller => '/library', :action => 'index'}, :class => 'btn button-new') %> </p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>

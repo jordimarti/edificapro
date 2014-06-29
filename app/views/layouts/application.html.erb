@@ -7,6 +7,9 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+    <script type="text/javascript" src="//use.typekit.net/quy1lat.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <script type="text/javascript" src="//cdn.sublimevideo.net/js/fw7i9go9.js"></script>
   </head>
   <body>
     <header>
@@ -16,5 +19,16 @@
        <%= render 'layouts/messages' %>
        <%= yield %>
     </main>
+    <footer>
+      <div class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              © <a href="http://www.edificapro.com" class="footer-link">EdificaPRO</a> <br/> <%= link_to("Términos y condiciones de uso", {:controller => '/visitors', :action => 'terms'}, :class => "footer-link") %> - <%= link_to("Aviso legal", {:controller => '/visitors', :action => 'legal'}, :class => "footer-link") %> - <%= link_to("Contacto", {:controller => '/visitors', :action => 'contact'}, :class => "footer-link") %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

@@ -1,19 +1,25 @@
 <%# navigation styled for Bootstrap 3.0 %>
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="top-header">
   <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <%= link_to 'Home', root_path, class: 'navbar-brand' %>
-    </div>
-    <div class="collapse navbar-collapse">
-      <ul class="nav navbar-nav">
-        <%= render 'layouts/navigation_links' %>
-      </ul>
+    <div class="row">
+      <div class="col-sm-3 col-md-3 hidden-xs">
+        <%= link_to( image_tag('logo_edificapro.svg', :alt => 'Logo EdificaPRO', :class => 'logo-edificapro'), {:controller => '/visitors', :action => 'index'}) %>
+      </div>
+      <div class="col-md-3 visible-xs">
+        <%= link_to( image_tag('logo_edificapro.svg', :alt => 'Logo EdificaPRO'), {:controller => '/visitors', :action => 'index'}) %>
+      </div>
+      <div class="col-sm-9 col-md-9">
+        <div class="sessionbar">
+          <%= link_to("Cursos", {:controller => '/library', :action => 'index'}, :class => 'sessionbar-link') %> |
+          <% if user_signed_in? %>
+            <strong><%= current_user.email %></strong> | 
+            <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, :class => 'sessionbar-link'  %>
+          <% else %>
+            <%= link_to "Registrarse", new_user_registration_path, :class => 'sessionbar-link'  %> |
+            <%= link_to "Iniciar sesión", new_user_session_path, :class => 'sessionbar-link'  %>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </nav>
