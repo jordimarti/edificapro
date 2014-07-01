@@ -1,0 +1,106 @@
+<div class="courses-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Tienda</h1>
+      </div>
+    </div>
+    <div class="row">
+      
+      <div class="col-md-4">
+        <div class="course-container">
+          <div class="course-container-title">
+            <h2><%= @course_details.name %></h2>
+          </div>
+          <%= image_tag(@course_details.image, :alt => 'Imagen del curso', :class => 'img-responsive') %>
+        </div>
+      </div>
+
+      <div class="col-md-7 col-md-offset-1">
+        <h3>Información de facturación</h3>
+
+        <%= form_for(:purchase, :url => {:action => 'create'}) do |f| %>
+        	
+          <input name="purchase[course_id]" type="hidden" value="<%= @course_details.id %>" />
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+		          	<%= f.label :first_name, "Nombre" %>
+		            <%= f.text_field :first_name, :autofocus => true, :class => 'form-control' %>
+		          </div>
+		        </div>
+		        <div class="col-md-6">
+              <div class="form-group">
+		          	<%= f.label :last_name, "Apellidos" %>
+		            <%= f.text_field :last_name, :class => 'form-control' %>
+		          </div>
+		        </div>
+          </div>
+
+          <div class="form-group">
+          	<%= f.label :company_name, "Nombre de la empresa" %>
+            <%= f.text_field :company_name, :class => 'form-control' %>
+          </div>
+
+          <div class="form-group">
+          	<%= f.label :address, "Dirección" %>
+            <%= f.text_field :address, :class => 'form-control' %>
+          </div>
+
+          
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+		          	<%= f.label :zip_code, "Código postal" %>
+		            <%= f.text_field :zip_code, :class => 'form-control' %>
+		          </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+		          	<%= f.label :town, "Municipio" %>
+		            <%= f.text_field :town, :class => 'form-control' %>
+		          </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+		          	<%= f.label :province, "Provincia / Estado" %>
+		            <%= f.text_field :province, :class => 'form-control' %>
+		          </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+		          	<%= f.label :country, "País" %>
+		            <%= f.text_field :country, :class => 'form-control' %>
+		          </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+		          	<%= f.label :nif, "Número de identificación fiscal" %>
+		            <%= f.text_field :nif, :class => 'form-control' %>
+		          </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="checkbox">
+              <label>
+                <%= f.check_box :terms_of_service %>
+                He leído y acepto los Términos y condiciones
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="pay-button">Continuar con el pago</button>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

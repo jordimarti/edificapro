@@ -13,6 +13,7 @@
           <%= link_to("Cursos", {:controller => '/library', :action => 'index'}, :class => 'sessionbar-link') %> |
           <% if user_signed_in? %>
             <strong><%= current_user.email %></strong> | 
+            <%= link_to 'Configuración', edit_user_registration_path, :class => 'sessionbar-link'%> |
             <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, :class => 'sessionbar-link'  %>
           <% else %>
             <%= link_to "Registrarse", new_user_registration_path, :class => 'sessionbar-link'  %> |

@@ -1,0 +1,24 @@
+<div class="course-container">
+    <div class="course-container-title">
+        <h2><%= @course_details.name %></h2>
+        <p><%= @course_details.description %></p>
+    </div>
+    <video id="0" class="sublime" width="640" height="360" title="Presentación curso introducción al passivhaus" data-uid="0" preload="none">
+      <source src="https://s3-eu-west-1.amazonaws.com/edificapro/c01/c01c00_presentacion_hd.mp4" data-quality="hd" />
+      <source src="https://s3-eu-west-1.amazonaws.com/edificapro/c01/c01c00_presentacion_sd.mp4" />
+    </video>
+    <div class="course-container-text">
+    <% if defined? @user_purchase %>
+        <% if @user_purchase.where(:course_id => '1').blank? %>
+            <% link_text1 = "Comprar el curso: " + (@course_details.price/100).to_s %>
+            <%= link_to(link_text1, {:controller => '/purchases', :action => 'new', :id => @course_details.id }, class: "purchase-button") %>
+        <% else %>
+            <%= link_to("Ir al curso", {:controller => '/c01', :action => 'contexto'}, class: "purchased-button") %>
+        <% end %>
+    <% else %>
+        <% link_text2 = "Precio del curso: " + (@course_details.price/100).to_s %>
+        <%= link_to(link_text2, new_user_registration_path, class: "purchase-button") %>
+        <p class="purchase-bottom-text"><%= link_to("Regístrate", new_user_registration_path) %> o <%= link_to "inicia sesión", new_user_session_path %> <br/>para poder comprar el curso.</p>
+    <% end %>
+  </div>
+</div>
