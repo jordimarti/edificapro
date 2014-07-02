@@ -7,7 +7,7 @@ class PurchasesController < ApplicationController
 		@purchase = Purchase.new(purchase_params)
 		@purchase.user_id = current_user.id
 		if @purchase.save
-			redirect_to(:controller => 'charges', :action => 'course', :purchase_id => @purchase.id)
+			redirect_to(:controller => 'charges', :action => 'creditcard', :purchase_id => @purchase.id)
 		else
 			render('new')
 		end

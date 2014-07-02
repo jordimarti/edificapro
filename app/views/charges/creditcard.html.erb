@@ -1,0 +1,116 @@
+<% content_for :stripe_scripts do %>
+  <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+  <script type="text/javascript">
+    // This identifies your website in the createToken call below
+    Stripe.setPublishableKey('<%= Rails.configuration.stripe[:publishable_key] %>');
+ 
+    var stripeResponseHandler = function(status, response) {
+      var $form = $('#payment-form');
+ 
+      if (response.error) {
+        // Show the errors on the form
+        $form.find('.payment-errors').text(response.error.message);
+        $form.find('button').prop('disabled', false);
+      } else {
+        // token contains id, last4, and card type
+        var token = response.id;
+        // Insert the token into the form so it gets submitted to the server
+        $form.append($('<input type="hidden" name="stripeToken" />').val(token));
+        // and re-submit
+        $form.get(0).submit();
+      }
+    };
+ 
+    jQuery(function($) {
+      $('#payment-form').submit(function(e) {
+        var $form = $(this);
+ 
+        // Disable the submit button to prevent repeated clicks
+        $form.find('button').prop('disabled', true);
+ 
+        Stripe.card.createToken($form, stripeResponseHandler);
+ 
+        // Prevent the form from submitting with the default action
+        return false;
+      });
+    });
+  </script>
+<% end %>
+
+<div class="courses-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Tienda</h1>
+      </div>
+    </div>
+    <div class="row">
+      
+      <div class="col-md-4">
+        <div class="course-container">
+          <div class="course-container-title">
+            <h2><%= @course_details.name %></h2>
+          </div>
+          <%= image_tag(@course_details.image, :alt => 'Imagen del curso', :class => 'img-responsive') %>
+        </div>
+      </div>
+
+      <div class="col-md-5 col-md-offset-1">
+        <div class="credit-card-container">
+
+          <% if flash[:error] %>
+            <div class="alert alert-success alert-dismissable">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              <%= flash[:error] %>
+            </div>
+          <% end %>
+          <% if flash[:notice] %>
+            <div class="alert alert-success alert-dismissable">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              <%= flash[:notice] %>
+            </div>
+          <% end %>
+
+          <form action="pay" method="POST" id="payment-form" role="form">
+
+            <input type="hidden" name="purchase_id" value="<%= @purchase.id %>">
+
+            <span class="payment-errors"></span>
+         
+            <div class="form-group">
+              <label for="form-card-number">Número de tarjeta <%= image_tag('credit_cards.png', :alt => 'Accepted credit cards', :width => '118px', :height => '19px') %></label>
+              <input id="form-card-number" class="form-control" type="text" size="20" data-stripe="number"/>
+            </div>
+         
+            <div class="form-group">
+              <label for="form-card-code">Código de seguridad</label>
+              <div class="row">
+                <div class="col-md-4">
+                  <input id="form-card-code" class="form-control" type="text" size="4" data-stripe="cvc"/>
+                </div>
+              </div>
+            </div>
+         
+            <div class="form-group">
+              <label for="form-card-expiry-date">Fecha de caducidad</label>
+              <div class="row">
+                <div class="col-md-3">
+                  <label for="form-card-expiry-date">Mes (MM)</label>
+                  <input id ="form-card-expiry-date" class="form-control" type="text" size="2" data-stripe="exp-month"/>
+                </div>
+                <div class="col-md-5">
+                  <label>Año (AAAA)</label>
+                  <input class="form-control" type="text" size="4" data-stripe="exp-year"/>
+                </div>
+              </div>
+            </div>
+         
+            <button type="submit" class="pay-button">Comprar por <%= @course_details.price/100 %>€</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  

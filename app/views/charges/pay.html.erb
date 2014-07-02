@@ -1,0 +1,42 @@
+<div class="courses-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Tienda</h1>
+      </div>
+    </div>
+    <div class="row">
+      
+      <div class="col-md-4">
+        <div class="course-container">
+          <div class="course-container-title">
+            <h2><%= @course_details.name %></h2>
+          </div>
+          <%= image_tag(@course_details.image, :alt => 'Imagen del curso', :class => 'img-responsive') %>
+        </div>
+      </div>
+
+      <div class="col-md-5 col-md-offset-1">
+        <% if flash[:error] %>
+          <div class="alert alert-success alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <%= flash[:error] %>
+          </div>
+        <% end %>
+
+        <% if flash[:notice] %>
+          <div class="alert alert-success alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <%= flash[:notice] %>
+          </div>
+        <% end %>
+
+        <h3>Gracias por comprar este curso. <br/>Puedes empezar ahora mismo!</h3>
+        <p><%= link_to("Iniciar el curso", {:controller => @course_details.start_controller, :action => @course_details.start_action}, :class => 'btn button-new') %></p>
+        
+      </div>
+    </div>
+  </div>
+</div>
+  
+  

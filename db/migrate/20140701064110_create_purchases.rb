@@ -13,6 +13,7 @@ class CreatePurchases < ActiveRecord::Migration
     	t.string :country
     	t.string :nif
       t.boolean :terms_of_service
+      t.boolean :paid
 
       t.timestamps
     end

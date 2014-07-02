@@ -5,6 +5,8 @@ class CreateCourses < ActiveRecord::Migration
     	t.text :description
     	t.string :image
     	t.integer :price
+    	t.string :start_controller
+    	t.string :start_action
 
       t.timestamps
     end

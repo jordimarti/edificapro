@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 20140701075115) do
     t.text     "description"
     t.string   "image"
     t.integer  "price"
+    t.string   "start_controller"
+    t.string   "start_action"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -45,6 +47,7 @@ ActiveRecord::Schema.define(version: 20140701075115) do
     t.string   "country"
     t.string   "nif"
     t.boolean  "terms_of_service"
+    t.boolean  "paid"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
