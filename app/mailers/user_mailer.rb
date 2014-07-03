@@ -9,6 +9,6 @@ class UserMailer < ActionMailer::Base
 	end
 
 	def purchase_email(purchase)
-		@course_details = Course.find(purchase.course_id)
+		#@course_details = Course.find(purchase.course_id)
 	end
 end
