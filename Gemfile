@@ -15,6 +15,8 @@ gem 'devise'
 gem 'devise-i18n', '~> 0.10.3'
 gem 'pg'
 gem 'stripe', '~> 1.11.0'
+gem 'gibbon'
+
 group :development do
   #gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]

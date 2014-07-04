@@ -24,7 +24,7 @@ body {
 
 .top-header {
 	min-height: 80px;
-	padding-top: 18px;
+	padding-top: 16px;
 	background-color: white;
 }
 
@@ -45,19 +45,34 @@ body {
 }
 
 .sessionbar {
-	padding-top: 12px;
-	padding-bottom: 12px;
+	padding-top: 8px;
 	text-align: right;
+}
 
+ul.menu-navigation {
+	list-style: none;
+}
+
+ul.menu-navigation li {
+	float: left;
+	padding: 5px;
 }
 
 a.sessionbar-link {
 	color: #585857;
+	font-size: 12px;
+	font-weight: bold;
 }
 
 a.sessionbar-link:hover {
 	color: #db3e3b;
 	text-decoration: none;
+}
+
+.separator {
+	border-left: 1px solid #ccc;
+	width: 1px;
+	height: 22px;
 }
 
 .main-content {
@@ -208,11 +223,36 @@ a.buy-button {
 	color: white;
 	font-size: 1.5em;
 	font-weight: bold;
-	padding: 10px;
+	padding: 10px 25px 10px 25px;
 	border-radius: 5px;
 }
 
 a.buy-button:hover {
 	color: white;
 	text-decoration: none;
+}
+
+.ok-button {
+	background-color: #059E9A;
+	color: white;
+	font-size: 1em;
+	font-weight: bold;
+	padding: 8px 20px 8px 20px;
+	border-radius: 5px;
+	border: none;
+}
+
+.danger-button {
+	background-color: #de5235;
+	color: white;
+	font-size: 1em;
+	font-weight: bold;
+	padding: 8px 20px 8px 20px;
+	border-radius: 5px;
+	border: none;
+}
+
+.message-container {
+	background-color: white;
+	padding-bottom: 20px;
 }

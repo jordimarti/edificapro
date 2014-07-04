@@ -1,14 +1,17 @@
 class UserMailer < ActionMailer::Base
   default from: "gestion@edificapro.com"
 
-  #Això s'ha de fer! És l'exemple del llibre i s'ha de modificar!!!
-  def contact_email(contact)
-		@contact = contact
-		mail(to: Rails.application.secrets.owner_email, from: @contact.email, :subject =>
-		"Website Contact")
+	def purchase_email(purchase)
+		@course_details = Course.find(purchase.course_id)
+		@user_details = User.find(purchase.user_id)
+		mail(to: @user_details.email, from: "gestion@edificapro.com", :subject =>
+		"Compra del curso")
 	end
 
-	def purchase_email(purchase)
-		#@course_details = Course.find(purchase.course_id)
+	def welcome_email(user)
+		@user_details = User.find(user.id)
+		mail(to: @user_details.email, from: "gestion@edificapro.com", :subject =>
+		"Bienvenido a EdificaPRO")
 	end
+	
 end

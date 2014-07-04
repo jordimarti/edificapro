@@ -1,4 +1,3 @@
-<%# navigation styled for Bootstrap 3.0 %>
 <nav class="top-header">
   <div class="container">
     <div class="row">
@@ -9,16 +8,21 @@
         <%= link_to( image_tag('logo_edificapro.svg', :alt => 'Logo EdificaPRO'), {:controller => '/visitors', :action => 'index'}) %>
       </div>
       <div class="col-sm-9 col-md-9">
-        <div class="sessionbar">
-          <%= link_to("Cursos", {:controller => '/library', :action => 'index'}, :class => 'sessionbar-link') %> |
-          <% if user_signed_in? %>
-            <strong><%= current_user.email %></strong> | 
-            <%= link_to 'Configuración', edit_user_registration_path, :class => 'sessionbar-link'%> |
-            <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, :class => 'sessionbar-link'  %>
-          <% else %>
-            <%= link_to "Registrarse", new_user_registration_path, :class => 'sessionbar-link'  %> |
-            <%= link_to "Iniciar sesión", new_user_session_path, :class => 'sessionbar-link'  %>
-          <% end %>
+        <div class="sessionbar pull-right">
+          <ul class="menu-navigation">
+            <li><%= link_to("CURSOS", {:controller => '/library', :action => 'index'}, :class => 'sessionbar-link') %></li>
+            <li><div class="separator"></div></li>
+            <% if user_signed_in? %>
+              <li><strong><%= current_user.email %></strong></li>
+              <li><%= link_to 'CONFIGURACIÓN', edit_user_registration_path, :class => 'sessionbar-link'%></li>
+              <li><div class="separator"></div></li>
+              <li><%= link_to "CERRAR SESIÓN", destroy_user_session_path, method: :delete, :class => 'sessionbar-link' %></li>
+            <% else %>
+              <li><%= link_to "REGISTRARSE", new_user_registration_path, :class => 'sessionbar-link'  %></li>
+              <li><div class="separator"></div></li>
+              <li><%= link_to "INICIAR SESIÓN", new_user_session_path, :class => 'sessionbar-link'  %></li>
+            <% end %>
+          </ul>
         </div>
       </div>
     </div>
