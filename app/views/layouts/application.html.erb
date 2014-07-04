@@ -9,6 +9,11 @@
     <%= csrf_meta_tags %>
     <script type="text/javascript" src="//use.typekit.net/quy1lat.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('#user-button').dropdown()
+      });
+    </script>
     <script type="text/javascript" src="//cdn.sublimevideo.net/js/fw7i9go9.js"></script>
     <%= yield(:stripe_scripts) %>
   </head>
@@ -17,7 +22,7 @@
       <%= render 'layouts/navigation' %>
     </header>
     <main role="main">
-       <%= render 'layouts/messages' %>
+       
        <%= yield %>
     </main>
     <footer>

@@ -1,28 +1,36 @@
 <nav class="top-header">
   <div class="container">
     <div class="row">
-      <div class="col-sm-3 col-md-3 hidden-xs">
+      <div class="col-sm-3">
         <%= link_to( image_tag('logo_edificapro.svg', :alt => 'Logo EdificaPRO', :class => 'logo-edificapro'), {:controller => '/visitors', :action => 'index'}) %>
       </div>
-      <div class="col-md-3 visible-xs">
-        <%= link_to( image_tag('logo_edificapro.svg', :alt => 'Logo EdificaPRO'), {:controller => '/visitors', :action => 'index'}) %>
-      </div>
-      <div class="col-sm-9 col-md-9">
+      <div class="col-sm-9">
         <div class="sessionbar pull-right">
           <ul class="menu-navigation">
             <li><%= link_to("CURSOS", {:controller => '/library', :action => 'index'}, :class => 'sessionbar-link') %></li>
             <li><div class="separator"></div></li>
             <% if user_signed_in? %>
-              <li><strong><%= current_user.email %></strong></li>
-              <li><%= link_to 'CONFIGURACIÓN', edit_user_registration_path, :class => 'sessionbar-link'%></li>
-              <li><div class="separator"></div></li>
-              <li><%= link_to "CERRAR SESIÓN", destroy_user_session_path, method: :delete, :class => 'sessionbar-link' %></li>
+              <li>
+                <div class="dropdown">
+                  <a id="user-button" role="button" data-toggle="dropdown" data-target="#">
+                    <%= image_tag('user_icon.png', :alt => 'Usuario/a', :class => 'user-icon') %>
+                  </a>
+                  <ul class="dropdown-menu" role="menu" aria-labelledby="user-button" style="right: 0; left: auto;">
+                    <li role="presentation"><span class="sessionbar-email"><%= current_user.email %></span></li>
+                    <li role="presentation" class="divider">
+                    <li role="presentation"><%= link_to "Configuración", edit_user_registration_path, :class => 'sessionbar-link'%></li>
+                    <li role="presentation"><%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, :class => 'sessionbar-link' %></li>
+                  </ul>
+                </div>
+              </li>
+              
             <% else %>
               <li><%= link_to "REGISTRARSE", new_user_registration_path, :class => 'sessionbar-link'  %></li>
               <li><div class="separator"></div></li>
               <li><%= link_to "INICIAR SESIÓN", new_user_session_path, :class => 'sessionbar-link'  %></li>
             <% end %>
           </ul>
+          
         </div>
       </div>
     </div>

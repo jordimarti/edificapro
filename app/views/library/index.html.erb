@@ -1,6 +1,48 @@
-<h1>Library#index</h1>
-<p>Find me in app/views/library/index.html.erb</p>
-
-<p><%= link_to("Curs Passivhaus", {:controller => '/library', :action => 'course', :id => 1}, :class => 'btn button-new') %></p>
-
-<p><%= link_to("Curs auditories energètiques", {:controller => '/library', :action => 'course', :id => 2}, :class => 'btn button-new') %></p>
+<div class="main-content">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Listado de cursos</h2>
+				<p>Compra los cursos para poderlos ver cuando quieras.</p>
+			</div>
+		</div>
+		<div class="course-grid">
+			<div class="row">
+				<div class="col-sm-3">
+					<%= link_to({:controller => '/library', :action => 'course', :id => 1}, :class => 'course-link') do %>
+						<div class="course-container">
+							<div class="course-image">
+								<%= image_tag('courses/c01.jpg', :alt => 'Introducción al Passivhaus para climas cálidos', :class => 'responsive-image') %>
+							</div>
+							<div class="course-text">
+								<div class="course-title">
+									Introducción al Passivhaus para climas cálidos
+								</div>
+								<div class="course-instructor">
+									Con Micheel Wassouf
+								</div>
+							</div>
+						</div>
+					<% end %>
+				</div>
+				<div class="col-sm-3">
+					<%= link_to({:controller => '/library', :action => 'course', :id => 2}, :class => 'course-link') do %>
+						<div class="course-container">
+							<div class="course-image">
+								<%= image_tag('courses/c02.jpg', :alt => 'Auditorías energéticas en edificación', :class => 'responsive-image') %>
+							</div>
+							<div class="course-text">	
+								<div class="course-title">
+									Auditorías energéticas en edificación
+								</div>
+								<div class="course-instructor">
+									Con Maria Peralta
+								</div>
+							</div>
+						</div>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
