@@ -1,3 +1,16 @@
 // Place all the styles related to the purchases controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.pay-button {
+	background-color: #059E9A;
+	color: white;
+}
+
+.pay-button:hover {
+	color: white;
+}
+
+.course-details {
+	margin-top: 30px;
+}

@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20140701075115) do
 
   create_table "courses", force: true do |t|
     t.string   "name"
+    t.string   "instructor"
     t.text     "description"
     t.string   "image"
     t.integer  "price"

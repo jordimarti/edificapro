@@ -6,5 +6,5 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Course.create(id: 1, name: 'Introducción al Passivhaus para climas cálidos', description: 'Curso de introducción para entender las bases del estándar Passivhaus', image: 'courses/c01.jpg', price: 5900, start_controller: 'c01', start_action: 'contexto')
-Course.create(id: 2, name: 'Auditorías energéticas en edificación', description: 'Curso práctico para la realización de auditorías energéticas en los edificios', image: 'courses/c02.jpg', price: 4900, start_controller: 'c02', start_action: 'introduccion')
+Course.create(id: 1, name: 'Introducción al Passivhaus para climas cálidos', instructor: 'Micheel Wassouf', description: 'Curso de introducción para entender las bases del estándar Passivhaus', image: 'courses/c01.jpg', price: 5900, start_controller: 'c01', start_action: 'contexto')
+Course.create(id: 2, name: 'Auditorías energéticas en edificación', instructor: 'Maria Peralta', description: 'Curso práctico para la realización de auditorías energéticas en los edificios', image: 'courses/c02.jpg', price: 4900, start_controller: 'c02', start_action: 'introduccion')

@@ -1,21 +1,21 @@
-<div class="courses-content">
+<div class="main-content">
   <div class="container">
     <div class="row">
-      <div class="col-md-12">
-        <h1>Tienda</h1>
-      </div>
-    </div>
-    <div class="row">
-      
-      <div class="col-md-4">
-        <div class="course-container">
-          <div class="course-container-title">
-            <h2><%= @course_details.name %></h2>
-          </div>
+      <div class="col-sm-4">
+        <div class="course-page-title">
+          <h2 class="page-title">Tienda</h2>
+          <h3 class="page-subtitle"><%= @course_details.name %></h3>
           <%= image_tag(@course_details.image, :alt => 'Imagen del curso', :class => 'img-responsive') %>
+          <div class="course-details">
+            <p>Datos del curso:</p>
+            <ul>
+              <li>Profesor/a: <%= @course_details.instructor %></li>
+              <li>Precio: <%= (@course_details.price/100).to_s %> €</li>
+              <li>Tiempo estimado de realización: 8 horas</li>
+            </ul>
+          </div>
         </div>
       </div>
-
       <div class="col-md-7 col-md-offset-1">
         <h3>Información de facturación</h3>
 
@@ -26,7 +26,7 @@
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-		          	<%= f.label :first_name, "Nombre" %>
+                <%= f.label :first_name, "Nombre" %>
 		            <%= f.text_field :first_name, :autofocus => true, :class => 'form-control' %>
 		          </div>
 		        </div>
@@ -97,7 +97,7 @@
             </div>
           </div>
 
-          <button type="submit" class="pay-button">Continuar con el pago</button>
+          <button type="submit" class="btn pay-button">Continuar con el pago</button>
 
         <% end %>
       </div>
